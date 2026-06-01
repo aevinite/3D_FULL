@@ -219,7 +219,7 @@ function animateModelCinematic(onComplete) {
 
 function launchAR() {
   if(mvEl.canActivateAR){mvEl.activateAR();}
-  else{alert('AR requires HTTPS.\n\nUpload to tiiny.host and open on phone.');}
+  else{_showBadge('📱 Open this page on your phone to view in AR', '#fff');}
 }
 
 function _showBadge(msg, color) {
@@ -241,7 +241,7 @@ async function initViewer() {
   let lastTap=0;
   mvEl.addEventListener('touchend',()=>{
     const now=Date.now();
-    if(now-lastTap<280){mvEl.cameraOrbit='0deg 75deg 2.2m';mvEl.cameraTarget='auto auto auto';lastTap=0;}
+    if(now-lastTap<280){mvEl.cameraOrbit='0deg 75deg auto';mvEl.cameraTarget='auto auto auto';lastTap=0;}
     else{lastTap=now;}
   });
 
