@@ -220,6 +220,12 @@ model-viewer{
   text-transform:uppercase;z-index:20;pointer-events:none;
   transition:opacity 0.5s;
 }
+#trip-hint{
+  position:fixed;bottom:175px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,0.35);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;z-index:20;pointer-events:none;
+  opacity:0;transition:opacity 0.8s ease;
+}
 
 /* ══ BADGES ══ */
 .edit-mode-hint{

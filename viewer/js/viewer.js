@@ -274,6 +274,17 @@ async function initViewer() {
   // AR restart
   mvEl.addEventListener('ar-status',e=>{if(e.detail?.status==='session-started') runFullSequence();});
 
+  // Triple-click hint — gently fades in/out every 10s
+  const _tripHint=document.getElementById('trip-hint');
+  if(_tripHint){
+    const _pulse=()=>{
+      _tripHint.style.opacity='1';
+      setTimeout(()=>{_tripHint.style.opacity='0';},3500);
+    };
+    setTimeout(_pulse,6000);           // first appearance once intro settles
+    setInterval(_pulse,10000);         // then every 10 seconds
+  }
+
   // Line update loop
   (function _loop(){ INGREDIENTS.forEach(ing=>_updateLine(ing)); requestAnimationFrame(_loop); })();
 }
