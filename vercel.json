@@ -1,5 +1,7 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/viewer/", "permanent": false }
+  "rewrites": [
+    { "source": "/", "destination": "/viewer/index.html" },
+    { "source": "/css/:file*", "destination": "/viewer/css/:file*" },
+    { "source": "/js/:file*", "destination": "/viewer/js/:file*" }
   ]
 }
