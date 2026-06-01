@@ -1,0 +1,8 @@
+# Publish ONLY the viewer/ and content/ folders.
+# Ignore everything at the repo root by default...
+/*
+
+# ...then explicitly allow just these.
+!/.gitignore
+!/viewer/
+!/content/

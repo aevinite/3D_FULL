@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>4D View</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="load">
+  <div class="lwrap">
+    <div class="lring"></div>
+    <div class="lemoji">🥐</div>
+  </div>
+  <div class="ltxt">Loading 3D Model</div>
+</div>
+
+<div class="placing-badge" id="placing-badge"></div>
+
+<div id="topbar">
+  <div class="logo">∞ Infinite</div>
+  <div class="top-btns">
+    <button class="tbtn" id="ar-btn" onclick="launchAR()">📷 View in AR</button>
+  </div>
+</div>
+
+<div id="dbl-hint">Double tap to reset view</div>
+
+<model-viewer
+  id="mv"
+  ar
+  ar-modes="webxr scene-viewer quick-look"
+  ar-placement="floor"
+  camera-controls
+  touch-action="pan-y"
+  camera-orbit="0deg 75deg 2.2m"
+  min-camera-orbit="auto 20deg auto"
+  max-camera-orbit="auto 160deg auto"
+  shadow-intensity="1"
+  environment-image="neutral"
+  exposure="1.1"
+  alt="3D model"
+></model-viewer>
+
+<div id="bar">
+  <div class="dname" id="dish-title">Loading…</div>
+  <div class="dsub"  id="dish-sub"></div>
+  <div class="srow">
+    <div><div class="sv" id="stat-cal">—</div><div class="sl">Calories</div></div>
+    <div><div class="sv" id="stat-pro">—</div><div class="sl">Protein</div></div>
+    <div><div class="sv" id="stat-carb">—</div><div class="sl">Carbs</div></div>
+    <div><div class="sv" id="stat-price">—</div><div class="sl">Price</div></div>
+  </div>
+  <div class="brow">
+    <button class="badd">🛒 Add to Order</button>
+    <button class="binfo">ℹ</button>
+  </div>
+</div>
+
+<!-- NO EDIT PANEL. NO EDIT LOGIC. -->
+
+<script>
+  const INGREDIENTS = [];
+</script>
+<script src="js/viewer.js"></script>
+</body>
+</html>
