@@ -4,5 +4,6 @@
 
 # ...then explicitly allow just these.
 !/.gitignore
+!/vercel.json
 !/viewer/
 !/content/
